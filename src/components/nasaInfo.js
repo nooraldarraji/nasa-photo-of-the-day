@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function nasaInfo({ date, explanation, title, url, media_type }) {
+export function NasaInfo({ date, explanation, title, url, media_type }) {
 
     return (
 
@@ -9,7 +9,7 @@ export function nasaInfo({ date, explanation, title, url, media_type }) {
             <p>{date}</p>
             <p>{explanation}</p>
             <video width="400" controls>
-                <source src="{url}" type="{media_type}" />
+                <source src={url} type={media_type} />
             </video>
         </div>
 
