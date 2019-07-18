@@ -28,6 +28,12 @@ const Header = styled.h1`
     text-shadow: 0 2px white, 0 3px #777;
 `;
 
+const Paragraph = styled.p`
+    width: 30%;
+    color: ${props => props.black ? 'black' : 'white'}  
+`;
+
+
 
 export function NasaInfo({ date, explanation, title, url, media_type }) {
 
@@ -35,8 +41,8 @@ export function NasaInfo({ date, explanation, title, url, media_type }) {
 
         <Wrapper>
             <Header>{title}</Header>
-            <p>{date}</p>
-            <p>{explanation}</p>
+            <Paragraph black>{date}</Paragraph>
+            <Paragraph white>{explanation}</Paragraph>
             <video width="400" controls>
                 <source src={url} type={media_type} />
             </video>
