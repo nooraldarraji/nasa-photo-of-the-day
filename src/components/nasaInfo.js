@@ -39,22 +39,21 @@ const Paragraph = styled.p`
 const Media = styled.video`
     @media (max-width: 375px){
         width: 350px;
+        
     };
 `;
 
 
 
-export function NasaInfo({ date, explanation, title, url, media_type }) {
+export function NasaInfo(props) {
 
     return (
 
         <Wrapper>
-            <Header>{title}</Header>
-            <Paragraph black>{date}</Paragraph>
-            <Paragraph white>{explanation}</Paragraph>
-            <Media width="400" controls>
-                <source src={url} type={media_type} />
-            </Media>
+            <Header>{props.title}</Header>
+            <Paragraph black>{props.date}</Paragraph>
+            <Paragraph white>{props.explanation}</Paragraph>
+            {props.media_type === 'image' ? (<img src={props.url}></img>) : (<Media src={props.url} controls></Media>)}
         </Wrapper>
 
     )
